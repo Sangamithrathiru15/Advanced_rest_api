@@ -1,0 +1,13 @@
+version: "3"
+
+#to run the project from our curret directory we set the service as below
+services:
+  app:
+    build:
+      context: .
+    ports:
+     - "8000:8000"
+    volumes:
+     - ./app:/app
+    command: >
+     sh -c "python manage.py runserver 0.0.0.0:8000"
